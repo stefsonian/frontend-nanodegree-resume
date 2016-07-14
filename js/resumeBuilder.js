@@ -106,6 +106,7 @@ var view = {
         view.addProjects();
         view.addEducation();
         view.addMap();
+        view.addClickPosition();
     },
 
     prependItem: function(elem, destID, value) {
@@ -189,6 +190,12 @@ var view = {
 
     addMap: function() {
         $('#mapDiv').append(googleMap);
+    },
+
+    addClickPosition: function() {
+        $(document).click(function(loc) {
+            logClicks(loc.pageX, loc.pageY)
+        });
     }
 }
 
